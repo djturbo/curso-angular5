@@ -1,10 +1,8 @@
 const log4js = require('log4js');
-log4js.configure({
-	appenders: { zoo: { type: 'file', filename: 'zoo.log' } },
-	categories: { default: { appenders: ['zoo'], level: 'error' } },
-	disableClustering: true
-});
+
+const log = log4js.getLogger("server");
+
+log4js.configure(require('./log4js.config.json'));
    
-const logger = log4js.getLogger('zoo');
-logger.level = 'debug';
-module.exports = logger;
+
+module.exports = log;

@@ -4,6 +4,7 @@ const logger = require('./log4js.config');
 
 var mongoose = require('mongoose');
 var app = require('./app');
+
 var port = process.env.PORT || 1111;
 logger.debug('puerto: ', port);
 logger.debug('conectando con la base de datos mongodb');

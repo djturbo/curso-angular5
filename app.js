@@ -4,7 +4,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
-
+const log4js = requrie('log4js');
+/* log4js */
+app.use(log4js.connectLogger(log4js.getLogger("http"), { level: 'auto' }));
 // rutas
 const userRoutes = require('./router/user.router');
 const animalRoutes = require('./router/animal.router');
