@@ -1,6 +1,6 @@
 'use strict'
 
-const logger = require('./log4js.config');
+const logger = require('./log4js.configuration');
 
 var mongoose = require('mongoose');
 var app = require('./app');

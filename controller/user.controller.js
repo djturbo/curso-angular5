@@ -1,7 +1,7 @@
 'user strict'
 const TAG = 'user.controller.js :: ';
 const USERS_IMAGE_DIR = './uploads/users/';
-const logger = require('./log4js.config');
+const logger = require('../log4js.configuration');
 
 /* MODULOS */
 const bcrypt = require('bcrypt-nodejs');
