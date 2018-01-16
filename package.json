@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Aplicación curso de angualr 5 avanzaado",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
@@ -15,7 +15,6 @@
     "connect-multiparty": "^2.1.0",
     "express": "^4.16.2",
     "jwt-simple": "^0.5.1",
-    "log4js": "^1.1.1",
     "moment": "^2.20.1",
     "mongoose": "^5.0.0-rc0"
   },

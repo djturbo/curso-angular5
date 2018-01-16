@@ -1,7 +1,7 @@
 'user strict'
 const TAG = 'user.controller.js :: ';
 const USERS_IMAGE_DIR = './uploads/users/';
-const logger = require('../log4js.configuration');
+// const logger = require('../log4js.configuration');
 
 /* MODULOS */
 const bcrypt = require('bcrypt-nodejs');
@@ -25,7 +25,7 @@ function pruebas(req, res){
 function save(req, res){
 	
 	var params = req.body;
-	logger.debug('user.controller :: save() params: ', params);
+	console.log('user.controller :: save() params: ', params);
 	if(params.password && params.name && params.surname && params.email){
 		var user = new User();
 		user.name = params.name;
@@ -36,7 +36,7 @@ function save(req, res){
 
 		/* Check if user exist */
 		User.findOne({email: user.email.toLowerCase()}, (err, userExist) =>{
-			logger.info(TAG, 'saved user: ', userExist);
+			console.log(TAG, 'saved user: ', userExist);
 			if(err){
 				res.status(403).send({message: 'Error guardando el usuario.', error: err});
 			}else{
@@ -46,7 +46,7 @@ function save(req, res){
 						user.password = hash;
 						user.save((err, userStored) =>{
 							if(err){
-								logger.error(this.TAG, 'save() error: ', err);
+								console.error(this.TAG, 'save() error: ', err);
 								res.status(500).send({message: 'Error al guardar al usuario'});
 							}else{
 								if(!userStored){
